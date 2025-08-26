@@ -1,28 +1,88 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+
 spring:
-# Redis生产配置
+  application:
+    name: wechat-passcode-service
+  # Redis配置
   data:
     redis:
-      host: ${REDIS_HOST}
+      host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
-      password: ${REDIS_PASSWORD}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DB:0}
+      timeout: 3000ms
       lettuce:
         pool:
-          max-active: 50
-          max-idle: 20
-          min-idle: 10
+          max-active: 20
+          max-idle: 10
+          min-idle: 5
+          max-wait: -1ms
 
-# 生产环境口令配置
+  # 静态资源配置
+  web:
+    resources:
+      static-locations: classpath:/static/
+      cache:
+        period: 3600
+
+# 微信公众号配置
+wechat:
+  mp:
+    app-id: ${WECHAT_APP_ID:}
+    secret: ${WECHAT_APP_SECRET:}
+    token: ${WECHAT_TOKEN:}
+    aes-key: ${WECHAT_AES_KEY:}
+    # 公众号二维码地址（固定二维码）
+    qr-code-url: ${WECHAT_QR_CODE_URL:}
+
+# 口令相关配置
 passcode:
+  # 口令长度
+  length: 6
+  # 有效期（秒）
   ttl: 300
+  # 最大验证尝试次数
+  max-attempts: 3
+  # 触发关键词
+  keyword: "公众号排版"
+  # 频率限制配置
   rate-limit:
+    # 每个IP每分钟最大请求数
     per-ip: 10
+    # 每个用户每分钟最大请求数
     per-user: 3
+    # 时间窗口（秒）
+    window: 60
 
-# 生产环境日志配置
+# 日志配置
 logging:
   level:
-    com.wechat.passcode: INFO
-    org.springframework.data.redis: WARN
-    me.chanjar.weixin: WARN
+    com.wechat.passcode: DEBUG
+    org.springframework.data.redis: DEBUG
+    me.chanjar.weixin: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
   file:
-    name: /var/log/wechat-passcode-service/application.log
+    name: logs/wechat-passcode-service.log
+    max-size: 10MB
+    max-history: 30
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  info:
+    env:
+      enabled: true
