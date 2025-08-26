@@ -1,0 +1,28 @@
+spring:
+# Redis生产配置
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+      lettuce:
+        pool:
+          max-active: 50
+          max-idle: 20
+          min-idle: 10
+
+# 生产环境口令配置
+passcode:
+  ttl: 300
+  rate-limit:
+    per-ip: 10
+    per-user: 3
+
+# 生产环境日志配置
+logging:
+  level:
+    com.wechat.passcode: INFO
+    org.springframework.data.redis: WARN
+    me.chanjar.weixin: WARN
+  file:
+    name: /var/log/wechat-passcode-service/application.log

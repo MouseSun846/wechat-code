@@ -1,0 +1,15 @@
+# 开发环境口令配置
+passcode:
+  # 开发环境口令有效期较长，便于测试
+  ttl: 600
+  # 开发环境放宽频率限制
+  rate-limit:
+    per-ip: 100
+    per-user: 50
+
+# 开发环境日志配置
+logging:
+  level:
+    com.wechat.passcode: DEBUG
+    org.springframework.data.redis: DEBUG
+    me.chanjar.weixin: DEBUG
