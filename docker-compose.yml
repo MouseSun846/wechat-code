@@ -5,20 +5,13 @@ services:
   wechat-passcode-service:
     build: .
     container_name: wechat-passcode-service
+    environment:
+      - REDIS_HOST=redis
+    image: registry.cnbita.com:5000/lsy/wechat-passcode:v1
     ports:
       - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=dev
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - WECHAT_APP_ID=${WECHAT_APP_ID:-your_app_id}
-      - WECHAT_APP_SECRET=${WECHAT_APP_SECRET:-your_app_secret}
-      - WECHAT_TOKEN=${WECHAT_TOKEN:-your_token}
-      - WECHAT_AES_KEY=${WECHAT_AES_KEY:-your_aes_key}
-      - WECHAT_QR_CODE_URL=${WECHAT_QR_CODE_URL:-https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=your_ticket}
     depends_on:
       - redis
-      - mysql
     volumes:
       - ./logs:/app/logs
     networks:
@@ -27,7 +20,7 @@ services:
 
   # Redis缓存服务
   redis:
-    image: redis:7-alpine
+    image: registry.cnbita.com:5000/lsy/redis:7-alpine
     container_name: wechat-redis
     ports:
       - "6379:6379"
@@ -38,41 +31,8 @@ services:
       - wechat-network
     restart: unless-stopped
 
-  # MySQL数据库服务（可选）
-  mysql:
-    image: mysql:8.0
-    container_name: wechat-mysql
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=wechat_passcode
-      - MYSQL_USER=wechat
-      - MYSQL_PASSWORD=wechat123
-    volumes:
-      - mysql_data:/var/lib/mysql
-      - ./sql:/docker-entrypoint-initdb.d
-    networks:
-      - wechat-network
-    restart: unless-stopped
-
-  # Redis管理界面（可选）
-  redis-commander:
-    image: rediscommander/redis-commander:latest
-    container_name: redis-commander
-    ports:
-      - "8081:8081"
-    environment:
-      - REDIS_HOSTS=local:redis:6379
-    depends_on:
-      - redis
-    networks:
-      - wechat-network
-    restart: unless-stopped
-
 volumes:
   redis_data:
-  mysql_data:
 
 networks:
   wechat-network:
