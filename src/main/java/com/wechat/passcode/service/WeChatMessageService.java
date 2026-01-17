@@ -47,6 +47,8 @@ public class WeChatMessageService {
         // 处理关键词
         if ("公众号排版".equals(content.trim()) || "口令".equals(content.trim())) {
             return handlePasscodeRequest(wxMessage);
+        } else if ("菜单".equals(content.trim()) || "help".equals(content.trim()) || "帮助".equals(content.trim())) {
+            return handleMenuRequest(wxMessage);
         } else if (passcodeService.isKeywordMatch(content.trim())) {
             return handlePluginMessage(wxMessage);
         }
@@ -62,6 +64,17 @@ public class WeChatMessageService {
             response = "";
         }
         return createTextReply(wxMessage, response);
+    }
+
+    /**
+     * 处理菜单请求
+     *
+     * @param wxMessage 微信消息
+     * @return 回复消息
+     */
+    private WxMpXmlOutMessage handleMenuRequest(WxMpXmlMessage wxMessage) {
+        String menuMessage = passcodeService.getMenuMessage();
+        return createTextReply(wxMessage, menuMessage);
     }
 
     /**
@@ -83,6 +96,7 @@ public class WeChatMessageService {
                         "   ▶ 提示词工程、模型私有化部署\n\n" +
                         "💻 前大厂程序员，致力于拆解AI技术实践逻辑\n" +
                         "🚀 探索大模型从技术概念到产业落地的无限可能\n\n" +
+                        "💡 发送「菜单」或「help」获取可用功能列表\n" +
                         "如有问题，欢迎交流探讨！");
 
         return createTextReply(wxMessage, welcomeMessage);

@@ -248,4 +248,35 @@ public class PasscodeService {
         return passcodeConfig.getLayoutPlugin().equals(plugin);
     }
 
+    /**
+     * 获取菜单消息
+     *
+     * @return 菜单消息字符串
+     */
+    public String getMenuMessage() {
+        Map<String, String> keywords = keywordConfigReader.getAllKeywords();
+        
+        StringBuilder menu = new StringBuilder();
+        menu.append("📋 可用关键词菜单\n\n");
+        menu.append("发送以下关键词获取对应内容：\n\n");
+        
+        // 添加口令相关
+        menu.append("🔑 口令相关：\n");
+        menu.append("  公众号排版 / 口令 → 获取排版口令\n\n");
+        
+        // 添加配置中的关键词
+        if (!keywords.isEmpty()) {
+            menu.append("📚 其他功能：\n");
+            for (String keyword : keywords.keySet()) {
+                menu.append("  ").append(keyword).append(" → 获取对应内容\n");
+            }
+            menu.append("\n");
+        }
+        
+        menu.append("💡 提示：直接发送关键词即可获取详情\n");
+        menu.append("例如：发送「排版插件」获取插件信息");
+        
+        return menu.toString();
+    }
+
 }

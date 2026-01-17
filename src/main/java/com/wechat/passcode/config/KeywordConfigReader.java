@@ -66,6 +66,15 @@ public class KeywordConfigReader implements ApplicationRunner {
                     KeywordConfig config = objectMapper.readValue(configContent, KeywordConfig.class);
                     this.keywordResponses = config.getKeywords();
                     log.info("成功从 URL {} 加载关键词配置，共 {} 个关键词", url, keywordResponses.size());
+                    
+                    // 打印加载的关键词列表
+                    if (!keywordResponses.isEmpty()) {
+                        log.info("已加载的关键词列表：");
+                        for (String keyword : keywordResponses.keySet()) {
+                            log.info("  - {}", keyword);
+                        }
+                    }
+                    
                     return;
                 } else {
                     log.warn("URL {} 返回内容为空，尝试下一个 URL", url);
@@ -76,6 +85,7 @@ public class KeywordConfigReader implements ApplicationRunner {
         }
         
         log.error("所有配置 URL 都尝试过了，均无法加载配置");
+        log.error("用户将无法使用关键词功能，请检查网络连接或配置 URL");
     }
 
     /**
