@@ -8,7 +8,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -31,7 +30,6 @@ public class KeywordConfigReader implements ApplicationRunner {
     private Map<String, String> keywordResponses = new HashMap<>();
 
     private static final String CONFIG_URL = "https://r.jina.ai/https://github.com/MouseSun846/wechat-code/blob/master/config.json";
-    private static final String CONFIG_FILE_PATH = "config.json";
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -44,31 +42,17 @@ public class KeywordConfigReader implements ApplicationRunner {
     public void loadConfig() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            // 尝试从远程 URL 加载配置
+            // 从远程 URL 加载配置
             String configContent = fetchConfigFromUrl(CONFIG_URL);
             if (configContent != null && !configContent.isEmpty()) {
                 KeywordConfig config = objectMapper.readValue(configContent, KeywordConfig.class);
                 this.keywordResponses = config.getKeywords();
                 log.info("成功从远程 URL 加载关键词配置，共 {} 个关键词", keywordResponses.size());
-                return;
+            } else {
+                log.error("远程配置内容为空");
             }
         } catch (IOException e) {
-            log.warn("从远程 URL 加载配置失败: {}，将尝试从本地文件加载", e.getMessage());
-        }
-
-        // 远程加载失败，尝试从本地文件加载
-        try {
-            File configFile = new File(CONFIG_FILE_PATH);
-            if (!configFile.exists()) {
-                log.warn("配置文件 {} 不存在，将使用默认配置", CONFIG_FILE_PATH);
-                createDefaultConfig();
-            }
-            
-            KeywordConfig config = objectMapper.readValue(configFile, KeywordConfig.class);
-            this.keywordResponses = config.getKeywords();
-            log.info("成功从本地文件加载关键词配置，共 {} 个关键词", keywordResponses.size());
-        } catch (IOException e) {
-            log.error("加载配置文件失败: {}", e.getMessage());
+            log.error("从远程 URL 加载配置失败: {}", e.getMessage());
         }
     }
 
@@ -98,25 +82,6 @@ public class KeywordConfigReader implements ApplicationRunner {
         }
     }
 
-    /**
-     * 创建默认配置文件
-     */
-    private void createDefaultConfig() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            KeywordConfig defaultConfig = new KeywordConfig();
-            Map<String, String> defaultKeywords = new HashMap<>();
-            defaultKeywords.put("公众号排版", "这是公众号排版的响应内容");
-            defaultKeywords.put("排版插件", "开源地址：https://github.com/MouseSun846/wechat-layout.git");
-            defaultConfig.setKeywords(defaultKeywords);
-            
-            objectMapper.writerWithDefaultPrettyPrinter()
-                .writeValue(new File(CONFIG_FILE_PATH), defaultConfig);
-            log.info("已创建默认配置文件: {}", CONFIG_FILE_PATH);
-        } catch (IOException e) {
-            log.error("创建默认配置文件失败: {}", e.getMessage());
-        }
-    }
 
     /**
      * 获取关键词对应的响应内容
