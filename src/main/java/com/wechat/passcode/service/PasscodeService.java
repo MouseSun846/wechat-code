@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * 口令服务类
  * 处理口令生成、验证、生命周期管理等核心业务逻辑
