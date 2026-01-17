@@ -47,7 +47,7 @@ public class WeChatMessageService {
         // 处理关键词
         if ("公众号排版".equals(content.trim()) || "口令".equals(content.trim())) {
             return handlePasscodeRequest(wxMessage);
-        } else if ("菜单".equals(content.trim()) || "help".equals(content.trim()) || "帮助".equals(content.trim())) {
+        } else if ("菜单".equals(content.trim()) || "help".equals(content.trim())   ) {
             return handleMenuRequest(wxMessage);
         } else if (passcodeService.isKeywordMatch(content.trim())) {
             return handlePluginMessage(wxMessage);
