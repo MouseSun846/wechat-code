@@ -2,7 +2,7 @@
   "keywords": {
     "公众号排版": "这是公众号排版的响应内容",
     "排版插件": "开源地址：https://github.com/MouseSun846/wechat-layout.git",
-    "帮助": "欢迎使用公众号排版助手\n\n发送「公众号排版」获取口令\n发送「排版插件」获取开源地址\n\n如有问题，请联系客服",
+    "帮助": "欢迎使用公众号排版助手\n\n发送「公众号排版」获取口令\n发送「排版插件」获取开源地址\n发送「客服」获取客服信息\n发送「cc-asr-input」获取claude code语音识别插件开源地址\n如有问题，请联系客服",
     "客服": "VX: GkottaTimothy",
     "cc-asr-input": "开源地址：https://github.com/MouseSun846/cc-asr-input"
   }
