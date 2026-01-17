@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -29,7 +31,16 @@ public class KeywordConfigReader implements ApplicationRunner {
 
     private Map<String, String> keywordResponses = new HashMap<>();
 
-    private static final String CONFIG_URL = "https://r.jina.ai/https://github.com/MouseSun846/wechat-code/blob/master/config.json";
+    private static final List<String> CONFIG_URLS = Arrays.asList(
+        "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://g.blfrp.cn/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://fastly.jsdelivr.net/gh/MouseSun846/wechat-code@master/config.json",
+        "https://gh.catmak.name/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://ghfast.top/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://hub.glowp.xyz/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://hk.gh-proxy.org/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json",
+        "https://wget.la/https://raw.githubusercontent.com/MouseSun846/wechat-code/master/config.json"
+    );
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -41,19 +52,27 @@ public class KeywordConfigReader implements ApplicationRunner {
      */
     public void loadConfig() {
         ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            // 从远程 URL 加载配置
-            String configContent = fetchConfigFromUrl(CONFIG_URL);
-            if (configContent != null && !configContent.isEmpty()) {
-                KeywordConfig config = objectMapper.readValue(configContent, KeywordConfig.class);
-                this.keywordResponses = config.getKeywords();
-                log.info("成功从远程 URL 加载关键词配置，共 {} 个关键词", keywordResponses.size());
-            } else {
-                log.error("远程配置内容为空");
+        
+        for (int i = 0; i < CONFIG_URLS.size(); i++) {
+            String url = CONFIG_URLS.get(i);
+            try {
+                log.info("尝试从 URL {} 加载配置 ({}/{})\n", url, i + 1, CONFIG_URLS.size());
+                
+                String configContent = fetchConfigFromUrl(url);
+                if (configContent != null && !configContent.isEmpty()) {
+                    KeywordConfig config = objectMapper.readValue(configContent, KeywordConfig.class);
+                    this.keywordResponses = config.getKeywords();
+                    log.info("成功从 URL {} 加载关键词配置，共 {} 个关键词", url, keywordResponses.size());
+                    return;
+                } else {
+                    log.warn("URL {} 返回内容为空，尝试下一个 URL", url);
+                }
+            } catch (IOException e) {
+                log.warn("从 URL {} 加载配置失败: {}，尝试下一个 URL", url, e.getMessage());
             }
-        } catch (IOException e) {
-            log.error("从远程 URL 加载配置失败: {}", e.getMessage());
         }
+        
+        log.error("所有配置 URL 都尝试过了，均无法加载配置");
     }
 
     /**
