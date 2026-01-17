@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM registry.cnbita.com:5000/lsy/wechat-passcode:v1
 
 # 设置工作目录
 WORKDIR /app
