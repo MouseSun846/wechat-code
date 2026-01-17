@@ -56,8 +56,12 @@ public class WeChatMessageService {
     }
 
     private WxMpXmlOutMessage handlePluginMessage(WxMpXmlMessage wxMessage) {
-        String message = "开源地址：https://github.com/MouseSun846/wechat-layout.git";
-        return createTextReply(wxMessage, message);
+        String content = wxMessage.getContent().trim();
+        String response = passcodeService.getKeywordResponse(content);
+        if (response == null) {
+            response = "";
+        }
+        return createTextReply(wxMessage, response);
     }
 
     /**

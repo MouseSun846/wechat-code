@@ -1,5 +1,6 @@
 package com.wechat.passcode.service;
 
+import com.wechat.passcode.config.KeywordConfigReader;
 import com.wechat.passcode.config.PasscodeConfig;
 import com.wechat.passcode.dto.PasscodeVerifyResponse;
 import com.wechat.passcode.model.PasscodeInfo;
@@ -23,6 +24,7 @@ public class PasscodeService {
 
     private final RedisService redisService;
     private final PasscodeConfig passcodeConfig;
+    private final KeywordConfigReader keywordConfigReader;
 
     /**
      * 为用户生成口令
@@ -226,7 +228,17 @@ public class PasscodeService {
      * @return true表示匹配，false表示不匹配
      */
     public boolean isKeywordMatch(String keyword) {
-        return passcodeConfig.getKeyword().equals(keyword);
+        return keywordConfigReader.containsKeyword(keyword);
+    }
+
+    /**
+     * 获取关键词对应的响应内容
+     * 
+     * @param keyword 关键词
+     * @return 响应内容，如果不存在返回null
+     */
+    public String getKeywordResponse(String keyword) {
+        return keywordConfigReader.getResponse(keyword);
     }
 
     /**
