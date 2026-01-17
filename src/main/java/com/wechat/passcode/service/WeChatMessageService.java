@@ -73,16 +73,17 @@ public class WeChatMessageService {
     public WxMpXmlOutMessage handleSubscribeEvent(WxMpXmlMessage wxMessage) {
         String openId = wxMessage.getFromUser();
         log.info("用户关注公众号: openId={}", openId);
-
         String welcomeMessage = String.format(
                 "欢迎关注！\n\n" +
-                        "🎯 发送「%s」获取口令\n" +
-                        "⏰ 口令有效期：%d分钟\n" +
-                        "🔄 口令仅可使用一次\n\n" +
-                        "如有问题，请联系客服。",
-                passcodeConfig.getKeyword(),
-                passcodeConfig.getTtl() / 60
-        );
+                        "🤖 深耕AI赛道的技术实践者\n" +
+                        "🎯 聚焦大模型应用落地\n\n" +
+                        "📚 持续分享核心干货：\n" +
+                        "   ▶ RAG、Agent与Skill体系\n" +
+                        "   ▶ MCP协同、上下文工程\n" +
+                        "   ▶ 提示词工程、模型私有化部署\n\n" +
+                        "💻 前大厂程序员，致力于拆解AI技术实践逻辑\n" +
+                        "🚀 探索大模型从技术概念到产业落地的无限可能\n\n" +
+                        "如有问题，欢迎交流探讨！");
 
         return createTextReply(wxMessage, welcomeMessage);
     }
