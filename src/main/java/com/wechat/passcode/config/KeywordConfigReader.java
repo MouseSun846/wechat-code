@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Component
+@EnableScheduling
 public class KeywordConfigReader implements ApplicationRunner {
 
     private Map<String, String> keywordResponses = new HashMap<>();
@@ -129,6 +132,17 @@ public class KeywordConfigReader implements ApplicationRunner {
      */
     public Map<String, String> getAllKeywords() {
         return new HashMap<>(keywordResponses);
+    }
+
+    /**
+     * 定时同步配置
+     * 每天凌晨 2 点执行一次
+     */
+    @Scheduled(cron = "0 0 2 * * ?")
+    public void syncConfig() {
+        log.info("开始定时同步配置...");
+        loadConfig();
+        log.info("定时同步配置完成");
     }
 
     /**
