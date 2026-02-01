@@ -16,6 +16,7 @@
     "SimpleMem": "https://github.com/aiming-lab/SimpleMem",
     "响应式队列对比": "完整源码示例和性能测试代码，包含Sinks.Many和BlockingQueue的详细对比实现。参考资源：a. Project Reactor官方文档：https://projectreactor.io/docs/core/release/reference/coreFeatures/sinks.html b. Sinks.Many API文档：https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Sinks.html c. JDK BlockingQueue文档：https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/BlockingQueue.html d. Reactive Streams规范：https://www.reactive-streams.org/",
     "Qwen3-ASR": "https://github.com/QwenLM/Qwen3-ASR",
-    "pi-mono": "https://github.com/badlogic/pi-mono"
+    "pi-mono": "https://github.com/badlogic/pi-mono",
+    "superpowers": "https://github.com/obra/superpowers"
   }
 }
