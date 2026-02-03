@@ -18,6 +18,7 @@
     "Qwen3-ASR": "https://github.com/QwenLM/Qwen3-ASR",
     "pi-mono": "https://github.com/badlogic/pi-mono",
     "superpowers": "https://github.com/obra/superpowers",
-    "ClaudeSource": "Claude Sonnet 5开发工具和开源项目详情，包括Claude Code多智能体系统、TPU优化技术、以及SWE-Bench基准测试相关信息"
+    "ClaudeSource": "Claude Sonnet 5开发工具和开源项目详情，包括Claude Code多智能体系统、TPU优化技术、以及SWE-Bench基准测试相关信息",
+    "nanoclaw": "NanoClaw: 基于容器的个人Claude助手，追求极简与安全。项目地址: https://github.com/gavrielc/nanoclaw"
   }
 }
