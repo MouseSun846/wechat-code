@@ -21,6 +21,6 @@
     "ClaudeSource": "Claude Sonnet 5开发工具和开源项目详情，包括Claude Code多智能体系统、TPU优化技术、以及SWE-Bench基准测试相关信息",
     "nanoclaw": "NanoClaw: 基于容器的个人Claude助手，追求极简与安全。项目地址: https://github.com/gavrielc/nanoclaw",
     "Obsidian可视化": "https://github.com/axtonliu/axton-obsidian-visual-skills",
-    "AI模板": "提示词工程模板合集，包含Technical Co-Founder等多个场景的工具"
+    "AI模板": "Prompt Engineering Hub - 收集和管理各种场景的提示词模板; AI Workflow Manager - 可视化的AI任务流程管理工具; Co-pilot Templates - 各种领域的AI协作模板库"
   }
 }
