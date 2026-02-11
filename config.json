@@ -32,6 +32,6 @@
     "Modal": "Modal: 云计算平台，为开发者提供按需GPU和CPU资源",
     "Daytona": "Daytona: 开发环境管理平台，自动化开发环境配置和部署",
     "Runloop": "Runloop: AI代理代码执行平台，专为Agent设计的安全执行环境",
-    "Sandbox": "https://x.com/hwchase17/status/2021261552222158955"
+    "Sandbox": "Harrison Chase关于Agent与沙箱集成的原文：https://x.com/hwchase17/status/2021261552222158955\\n\\n《The two patterns by which agents connect sandboxes》- LangChain创始人对Agent与沙箱两种架构模式的深度分析"
   }
 }
