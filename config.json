@@ -27,6 +27,7 @@
     "OpenClaw精选案例": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
     "next-evals": "https://github.com/vercel/next-evals-oss\nhttps://nextjs.org/evals",
     "claude-skills": "https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?hsLang=en",
-    "antigravity": "https://github.com/yuaotian/antigravity-proxy"
+    "antigravity": "https://github.com/yuaotian/antigravity-proxy",
+    "E2B": "E2B: 安全代码执行沙箱平台，提供远程代码执行和环境隔离能力"
   }
 }
