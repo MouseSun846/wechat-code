@@ -2,11 +2,11 @@
   "keywords": {
     "公众号排版": "这是公众号排版的响应内容",
     "排版插件": "开源地址：https://github.com/MouseSun846/wechat-layout.git",
-    "帮助": "欢迎使用公众号排版助手\n\n发送「公众号排版」获取口令\n发送「排版插件」获取开源地址\n发送「客服」获取客服信息\n发送「cc-asr-input」获取claude code语音识别插件开源地址\n如有问题，请联系客服",
+    "帮助": "欢迎使用公众号排版助手\\n\\n发送「公众号排版」获取口令\\n发送「排版插件」获取开源地址\\n发送「客服」获取客服信息\\n发送「cc-asr-input」获取claude code语音识别插件开源地址\\n如有问题，请联系客服",
     "客服": "VX: GkottaTimothy",
     "cc-asr-input": "开源地址：https://github.com/MouseSun846/cc-asr-input",
     "agent-loop": "https://x.com/gregpr07/status/2012052139384979773",
-    "AgentOS2-Live": "https://github.com/OrionStarAI/AgentOS2-Live?tab=readme-ov-file \n https://github.com/OrionStarAI/end2end_sample",
+    "AgentOS2-Live": "https://github.com/OrionStarAI/AgentOS2-Live?tab=readme-ov-file \\n https://github.com/OrionStarAI/end2end_sample",
     "add-skill": "https://github.com/vercel-labs/add-skill",
     "json-render": "https://github.com/vercel-labs/json-render",
     "Pencil": "参考：https://x.com/kotKK7/status/2014496323576418338 https://www.pencil.dev/",
@@ -25,13 +25,15 @@
     "AGENTS.md": "https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
     "awesome-openclaw-usecases": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
     "OpenClaw精选案例": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-    "next-evals": "https://github.com/vercel/next-evals-oss\nhttps://nextjs.org/evals",
+    "next-evals": "https://github.com/vercel/next-evals-oss\\nhttps://nextjs.org/evals",
     "claude-skills": "https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf?hsLang=en",
     "antigravity": "https://github.com/yuaotian/antigravity-proxy",
     "E2B": "E2B: 安全代码执行沙箱平台，提供远程代码执行和环境隔离能力",
     "Modal": "Modal: 云计算平台，为开发者提供按需GPU和CPU资源",
     "Daytona": "Daytona: 开发环境管理平台，自动化开发环境配置和部署",
     "Runloop": "Runloop: AI代理代码执行平台，专为Agent设计的安全执行环境",
-    "Sandbox": "Harrison Chase关于Agent与沙箱集成的原文：https://x.com/hwchase17/status/2021261552222158955\\n\\n《The two patterns by which agents connect sandboxes》- LangChain创始人对Agent与沙箱两种架构模式的深度分析"
+    "Sandbox": "Harrison Chase关于Agent与沙箱集成的原文：https://x.com/hwchase17/status/2021261552222158955\\\\n\\\\n《The two patterns by which agents connect sandboxes》- LangChain创始人对Agent与沙箱两种架构模式的深度分析",
+    "OpenAI-Skills-Shell": "OpenAI Skills示例代码和文档：https://github.com/openai/skills-examples",
+    "OpenAI-Agents": "https://github.com/openai/agents-skills"
   }
 }
