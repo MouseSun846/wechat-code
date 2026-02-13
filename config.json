@@ -33,6 +33,7 @@
     "Daytona": "Daytona: 开发环境管理平台，自动化开发环境配置和部署",
     "Runloop": "Runloop: AI代理代码执行平台，专为Agent设计的安全执行环境",
     "Sandbox": "Harrison Chase关于Agent与沙箱集成的原文：https://x.com/hwchase17/status/2021261552222158955\\\\n\\\\n《The two patterns by which agents connect sandboxes》- LangChain创始人对Agent与沙箱两种架构模式的深度分析",
-    "OpenAI-Agents": "https://developers.openai.com/blog/skills-shell-tips"
+    "OpenAI-Agents": "https://developers.openai.com/blog/skills-shell-tips",
+    "xfunfree": "科大讯飞模型广场：https://maas.xfyun.cn/modelSquare/nGLM-5、Kimi-K2.5、Qwen-Image-2512、MiniMax-2.1、GLM-4.7等顶级大模型全部免费使用！/n0元/百万tokens，支持文本生成、文生图、多模态等多种场景"
   }
 }
