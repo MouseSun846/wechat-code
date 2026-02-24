@@ -39,6 +39,7 @@
     "LobsterAI": "https://lobsterai.youdao.com",
     "Obsidian可视化三件套": "https://github.com/axtonliu/axton-obsidian-visual-skills",
     "ClawWork": "https://github.com/HKUDS/ClawWork",
-    "evolver": "https://github.com/autogame-17/evolver"
+    "evolver": "https://github.com/autogame-17/evolver",
+    "AI编码": "Simon Willison 的《Agentic Engineering Patterns》系列文章，探讨 AI 时代软件开发的最佳实践：https://simonwillison.net/guides/agentic-engineering-patterns/"
   }
 }
