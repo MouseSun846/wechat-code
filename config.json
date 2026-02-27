@@ -42,6 +42,6 @@
     "evolver": "https://github.com/autogame-17/evolver",
     "AI编码": "Simon Willison 的《Agentic Engineering Patterns》系列文章，探讨 AI 时代软件开发的最佳实践：https://simonwillison.net/guides/agentic-engineering-patterns/",
     "claude-devtools": "https://github.com/matt1398/claude-devtools",
-    "自改进智能体": "https://clawhub.ai/pskoett/self-improving-agent"
+    "自改进智能体": "GitHub: https://github.com/peterskoett/self-improving-agent | ClawHub: https://clawhub.ai/pskoett/self-improving-agent"
   }
 }
