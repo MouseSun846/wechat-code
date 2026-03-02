@@ -44,6 +44,7 @@
     "claude-devtools": "https://github.com/matt1398/claude-devtools",
     "自改进智能体": "GitHub: https://github.com/peterskoett/self-improving-agent | ClawHub: https://clawhub.ai/pskoett/self-improving-agent",
     "HF技能": "https://github.com/huggingface/skills",
-    "openfang": "https://github.com/RightNow-AI/openfang"
+    "openfang": "https://github.com/RightNow-AI/openfang",
+    "AI编程进化": "https://github.com/microsoft/autogen"
   }
 }
