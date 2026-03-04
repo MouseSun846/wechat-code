@@ -48,6 +48,7 @@
     "MobileAgent": "https://github.com/X-PLUG/MobileAgent",
     "Anthropic课程": "http://anthropic.skilljar.com/",
     "Agent Reach": "https://github.com/Panniantong/Agent-Reach",
-    "CoPaw": "https://github.com/agentscope-ai/CoPaw"
+    "CoPaw": "https://github.com/agentscope-ai/CoPaw",
+    "skill-creator": "skill-creator 是 Claude 官方推出的技能创建工具，支持测试、评估和优化 AI 技能。可通过 Claude Code 插件、Claude.ai 和 Cowork 使用。"
   }
 }
