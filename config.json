@@ -47,6 +47,7 @@
     "openfang": "https://github.com/RightNow-AI/openfang",
     "MobileAgent": "https://github.com/X-PLUG/MobileAgent",
     "Anthropic课程": "http://anthropic.skilljar.com/",
-    "Agent Reach": "https://github.com/Panniantong/Agent-Reach"
+    "Agent Reach": "https://github.com/Panniantong/Agent-Reach",
+    "CoPaw": "https://github.com/agentscope-ai/CoPaw"
   }
 }
