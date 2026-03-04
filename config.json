@@ -46,6 +46,7 @@
     "HF技能": "https://github.com/huggingface/skills",
     "openfang": "https://github.com/RightNow-AI/openfang",
     "MobileAgent": "https://github.com/X-PLUG/MobileAgent",
-    "Anthropic课程": "http://anthropic.skilljar.com/"
+    "Anthropic课程": "http://anthropic.skilljar.com/",
+    "Agent Reach": "https://github.com/Panniantong/Agent-Reach"
   }
 }
