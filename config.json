@@ -51,6 +51,7 @@
     "CoPaw": "https://github.com/agentscope-ai/CoPaw",
     "skill-creator": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator/skills/skill-creator",
     "Apify技能": "Apify Agent Skills 开源项目地址：https://github.com/apify/agent-skills\\n\\n一个为 Claude Code 和 Cursor 设计的强大工具集，让 AI 开发者能够轻松获取互联网上的各类数据。核心技能 apify-ultimate-scraper 支持：\\n- X (Twitter) 实时推文获取\\n- TikTok / IG 热门趋势捕获\\n- YouTube 视频字幕与下载\\n- Google Maps 商家信息采集\\n\\n所有数据返回结构化 JSON，无缝接入大模型工作流。",
-    "openclaw": "https://github.com/openclaw/openclaw"
+    "openclaw": "https://github.com/openclaw/openclaw",
+    "qwen3-stream-asr": "https://github.com/MouseSun846/qwen3-stream-asr"
   }
 }
