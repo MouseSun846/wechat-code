@@ -54,6 +54,7 @@
     "openclaw": "https://github.com/openclaw/openclaw",
     "qwen3-stream-asr": "https://github.com/MouseSun846/qwen3-stream-asr",
     "agency-agents": "https://github.com/msitarzewski/agency-agents",
-    "openclaw-news": "https://github.com/cclank/news-aggregator-skill"
+    "openclaw-news": "https://github.com/cclank/news-aggregator-skill",
+    "TUSHARE": "https://clawhub.ai/AlphaFactor/tushare"
   }
 }
