@@ -57,6 +57,7 @@
     "openclaw-news": "https://github.com/cclank/news-aggregator-skill",
     "TUSHARE": "https://clawhub.ai/AlphaFactor/tushare",
     "OpenClaw": "https://github.com/OpenClaw/OpenClaw",
-    "MC2026": "https://github.com/aiming-lab/MetaClaw"
+    "MC2026": "https://github.com/aiming-lab/MetaClaw",
+    "autoresearch": "https://github.com/karpathy/autor"
   }
 }
