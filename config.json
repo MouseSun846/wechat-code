@@ -59,6 +59,7 @@
     "OpenClaw": "https://github.com/OpenClaw/OpenClaw",
     "MC2026": "https://github.com/aiming-lab/MetaClaw",
     "autoresearch": "https://github.com/karpathy/autoresearch",
-    "CLI-Anything": "https://github.com/HKUDS/CLI-Anything"
+    "CLI-Anything": "https://github.com/HKUDS/CLI-Anything",
+    "gstack": "https://github.com/garrytan/gstack - YC CEO开源的Claude Code专业技能集，将AI从通用助手变成完整工程部门，包含13个专业化技能"
   }
 }
